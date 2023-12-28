@@ -15,10 +15,10 @@ const User = mongoose.Schema(
       required: true,
       default: null,
     },
-    // image: {
-    //   type: String,
-    //   required: true,
-    // },
+    image: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

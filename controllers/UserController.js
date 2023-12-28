@@ -17,7 +17,14 @@ export const getUserById = async (req, res) => {
   }
 };
 export const saveUser = async (req, res) => {
-  const user = new User(req.body);
+  const { body, file } = req;
+  const user = new User({
+    name: body.name,
+    email: body.email,
+    gender: body.gender,
+    image: file.path,
+  });
+  console.log(file.path);
   try {
     const insertUser = await user.save();
     res.status(201).json(insertUser);
